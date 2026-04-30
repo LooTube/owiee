@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>owiee</title>
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto',sans-serif;background-color:cyan;color:green;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;}
+h1{font-size:3rem;font-weight:900;color:green;margin-bottom:32px;}
+.card{background:rgba(0,180,0,0.1);border:3px solid green;border-radius:12px;padding:36px 32px;width:100%;max-width:380px;}
+label{display:block;font-weight:700;margin-bottom:6px;color:darkgreen;}
+input{width:100%;padding:12px 14px;border:2px solid green;border-radius:7px;background:white;color:green;font-family:'Roboto',sans-serif;font-size:1rem;margin-bottom:18px;outline:none;}
+input:focus{border-color:darkgreen;}
+button{width:100%;padding:13px;background:green;color:cyan;border:none;border-radius:8px;font-size:1.1rem;font-weight:700;cursor:pointer;font-family:'Roboto',sans-serif;transition:background 0.2s;}
+button:hover{background:darkgreen;}
+.error{color:red;font-weight:600;margin-top:14px;text-align:center;display:none;}
+nav{margin-top:24px;display:flex;gap:14px;}
+nav a{color:darkgreen;font-weight:600;text-decoration:underline;}
+nav a:hover{color:#004400;}
+footer{margin-top:40px;color:darkgreen;font-size:0.85rem;}
+</style>
+</head>
+<body>
+<h1>owiee</h1>
+<div class="card">
+<label for="su-username">Username</label>
+<input type="text" id="su-username" placeholder="Username">
+<label for="su-email">Email</label>
+<input type="email" id="su-email" placeholder="Email">
+<label for="su-pass">Password</label>
+<input type="password" id="su-pass" placeholder="Password">
+<label for="su-confirm">Confirm Password</label>
+<input type="password" id="su-confirm" placeholder="Confirm Password">
+<button onclick="signup()">Create Account</button>
+<div class="error" id="signup-error"></div>
+</div>
+<nav>
+<a href="login.html">Login</a>
+<a href="index.html">Home</a>
+</nav>
+<footer>&copy; Lootube.github.io</footer>
+<script>
+function signuperror(msg) {
+document.getElementById('signup-error').textContent = msg;
+document.getElementById('signup-error').style.display = 'block';
+}
+function signup() {
+document.getElementById('signup-error').style.display = 'none';
+if (
+!document.getElementById('su-username').value.trim() ||
+!document.getElementById('su-email').value.trim() ||
+!document.getElementById('su-pass').value.trim() ||
+!document.getElementById('su-confirm').value.trim()
+) {
+signuperror('Please all the field required');
+return;
+}
+signuperror('Please all the field required');
+}
+</script>
+</body>
+</html>
